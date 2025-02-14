@@ -9,9 +9,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
   <body>
-    <nav>
+    <div id="particles-js"></div>
+    <nav data-motion="fade">
       <div class="nav-content">
         <h1>Mohammed Madni</h1>
         <ul>
@@ -25,13 +27,13 @@
     </nav>
 
     <header>
-      <div class="header-content">
+      <div class="header-content" data-motion="fade-up">
         <h1>Hello, I'm <span class="highlight">Mohammed Madni</span></h1>
         <p>BCA Student | Cricket Enthusiast | Developer</p>
       </div>
     </header>
 
-    <section id="about">
+    <section id="about" data-motion="fade-up">
       <h2>About Me</h2>
       <div class="about-content">
         <div class="about-text">
@@ -53,7 +55,7 @@
       </div>
     </section>
 
-    <section id="education">
+    <section id="education" data-motion="fade-up">
       <h2>Education</h2>
       <div class="education-card">
         <h3>Bachelor of Computer Applications (BCA)</h3>
@@ -66,7 +68,7 @@
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" data-motion="fade-up">
       <h2>Projects</h2>
       <div class="project-grid">
         <div class="project-card">
@@ -146,7 +148,7 @@
       </div>
     </section>
 
-    <section id="achievements">
+    <section id="achievements" data-motion="fade-up">
       <h2>Achievements</h2>
       <div class="achievements-grid">
         <div class="achievement-card">
@@ -162,7 +164,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-motion="fade-up">
       <h2>Get In Touch</h2>
       <div class="social-links">
         <a
@@ -191,12 +193,10 @@
         </a>
       </div>
     </section>
-    <footer>
-      <div class="box">yelo</div>
+    <footer data-motion="fade">
       <p>&copy; 2024 Mohammed Madni. All rights reserved.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
     <script src="./index.js"></script>
-    
   </body>
 </html>
