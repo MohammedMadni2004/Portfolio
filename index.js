@@ -80,7 +80,6 @@ particlesJS('particles-js',
   }
 );
 
-// Scroll animations
 const observerOptions = {
   threshold: 0.1
 };
@@ -98,7 +97,6 @@ document.querySelectorAll('section, .project-card, .education-card').forEach(el 
   observer.observe(el);
 });
 
-// Initialize animations
 window.addEventListener("DOMContentLoaded", () => {
   // Header animation
   motion(
@@ -113,7 +111,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  // Animate sections on scroll
   document.querySelectorAll("section").forEach((section) => {
     scroll(
       animate(section, {
@@ -127,7 +124,6 @@ window.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // Project cards hover effect
   document.querySelectorAll(".project-card").forEach((card) => {
     card.addEventListener("mouseenter", () => {
       motion(
@@ -153,4 +149,52 @@ window.addEventListener("DOMContentLoaded", () => {
       );
     });
   });
+
+  document.querySelectorAll('[data-motion-card]').forEach((card, index) => {
+    motion(card, {
+      initial: { scale: 0.9, opacity: 0, y: 50 },
+      animate: { scale: 1, opacity: 1, y: 0 },
+      transition: {
+        delay: index * 0.2,
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      },
+      whileHover: { 
+        scale: 1.03, 
+        rotate: 1,
+        transition: { duration: 0.3 }
+      }
+    });
+  });
+
+  
+  document.querySelectorAll('[data-motion-achievement]').forEach((card, index) => {
+    motion(card, {
+      initial: { opacity: 0, x: -50 },
+      animate: { opacity: 1, x: 0 },
+      transition: {
+        delay: index * 0.3,
+        type: "spring",
+        stiffness: 100
+      },
+      whileHover: { 
+        scale: 1.1,
+        transition: { duration: 0.2 }
+      }
+    });
+  });
+
+  document.querySelectorAll('.achievement-card i').forEach(icon => {
+    setInterval(() => {
+      icon.style.animation = 'none';
+      icon.offsetHeight; 
+      icon.style.animation = 'glow 3s infinite';
+    }, Math.random() * 5000 + 3000);
+  });
+
+  const scrollAnimationOptions = {
+    threshold: 0.2,
+    rootMargin: "-50px"
+  };
 });

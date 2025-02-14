@@ -101,6 +101,10 @@ header {
     margin-bottom: 2rem;
 }
 
+.header-content h1 .highlight {
+  animation: glow 3s infinite;
+}
+
 .highlight {
     color: var(--accent-color);
 }
@@ -139,6 +143,8 @@ h2 {
     border-radius: 20px;
     font-size: 0.9rem;
     color: var(--accent-primary);
+    animation: blink 4s infinite;
+    animation-delay: calc(var(--i) * 0.5s);
 }
 
 .education-card {
@@ -169,6 +175,9 @@ h2 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    will-change: transform;
+    perspective: 1000px;
 }
 
 .project-card:hover {
@@ -209,6 +218,7 @@ h2 {
 
 .project-card:hover .project-overlay {
     opacity: 1;
+    animation: glow 2s infinite;
 }
 
 .project-card:hover .project-img {
@@ -259,6 +269,23 @@ h2 {
     display: inline-block;
 }
 
+.project-content {
+    position: relative;
+    z-index: 1;
+    background: var(--card-bg);
+    height: 100%;
+    border-radius: inherit;
+}
+
+.project-details {
+    padding: 1.5rem;
+    background: linear-gradient(
+        to top,
+        var(--card-bg) 0%,
+        rgba(22, 24, 29, 0.8) 100%
+    );
+}
+
 .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -272,6 +299,10 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    transform-origin: center;
+    will-change: transform;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .achievement-card:hover {
@@ -282,6 +313,7 @@ h2 {
     font-size: 2.5rem;
     color: #007bff;
     margin-bottom: 1rem;
+    animation: glow 3s infinite;
 }
 
 .social-links {
@@ -318,6 +350,7 @@ h2 {
 .social-links a:hover {
     color: #007bff;
     transform: translateY(-5px);
+    animation: glow 1s infinite;
 }
 
 footer {
@@ -382,7 +415,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Add particle container */
 #particles-js {
     position: fixed;
     width: 100%;
@@ -390,4 +422,39 @@ footer {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+.project-card,
+.achievement-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-details,
+.achievement-card:hover {
+    background: linear-gradient(
+        135deg,
+        var(--accent-primary) 0%,
+        var(--accent-secondary) 100%
+    );
+    background-opacity: 0.1;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px var(--accent-primary); }
+  50% { text-shadow: 0 0 20px var(--accent-primary), 0 0 30px var(--accent-secondary); }
+  100% { text-shadow: 0 0 5px var(--accent-primary); }
+}
+
+.blink {
+  animation: blink 2s infinite;
+}
+
+.glow-text {
+  animation: glow 2s infinite;
 }

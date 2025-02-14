@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.js"></script>
   </head>
   <body>
     <div id="particles-js"></div>
@@ -47,9 +48,9 @@
         <div class="skills">
           <h3>Technical Skills</h3>
           <div class="skill-tags">
-            <span>Node.JS</span>
-            <span>React</span>
-            <span>WebSocket</span>
+            <span style="--i:1">Node.JS</span>
+            <span style="--i:2">React</span>
+            <span style="--i:3">WebSocket</span>
           </div>
         </div>
       </div>
@@ -71,78 +72,86 @@
     <section id="projects" data-motion="fade-up">
       <h2>Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
-          <div class="project-image">
-            <img
-              src="./assets/gamelogo.jpeg"
-              alt="Bingo Game Preview"
-              class="project-img"
-            />
-            <div class="project-overlay">
-              <a
-                href="https://github.com/MohammedMadni2004/Bingo"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fab fa-github"></i> View Code
-              </a>
-              <!-- <a
-                href="https://your-bingo-demo.com"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a> -->
+        <div class="project-card" data-motion-card>
+          <div class="project-content">
+            <div class="project-image">
+              <img
+                src="./assets/gamelogo.jpeg"
+                alt="Bingo Game Preview"
+                class="project-img"
+              />
+              <div class="project-overlay">
+                <a
+                  href="https://github.com/MohammedMadni2004/Bingo"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i> View Code
+                </a>
+                <!-- <a
+                  href="https://your-bingo-demo.com"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a> -->
+              </div>
             </div>
-          </div>
-          <h3>Multiplayer Bingo Game</h3>
-          <p>
-            An interactive multiplayer Bingo game built with WebSocket
-            technology for real-time gameplay. Features include live player
-            matching, server-side state management, and instant win
-            verification.
-          </p>
-          <div class="project-tags">
-            <span>Node.js</span>
-            <span>WebSocket</span>
-            <span>React</span>
+            <div class="project-details">
+              <h3>Multiplayer Bingo Game</h3>
+              <p>
+                An interactive multiplayer Bingo game built with WebSocket
+                technology for real-time gameplay. Features include live player
+                matching, server-side state management, and instant win
+                verification.
+              </p>
+              <div class="project-tags">
+                <span>Node.js</span>
+                <span>WebSocket</span>
+                <span>React</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-image">
-            <img
-              src="./assets/cut-the-q.jpeg"
-              alt="Cut the Queue Preview"
-              class="project-img"
-            />
-            <div class="project-overlay">
-              <a
-                href="https://github.com/iamnithishraja/cut-the-queue"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fab fa-github"></i> View Code
-              </a>
-              <a
-                href="https://cuttheq.in/"
-                target="_blank"
-                class="project-link"
-              >
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
+        <div class="project-card" data-motion-card>
+          <div class="project-content">
+            <div class="project-image">
+              <img
+                src="./assets/cut-the-q.jpeg"
+                alt="Cut the Queue Preview"
+                class="project-img"
+              />
+              <div class="project-overlay">
+                <a
+                  href="https://github.com/iamnithishraja/cut-the-queue"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fab fa-github"></i> View Code
+                </a>
+                <a
+                  href="https://cuttheq.in/"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
             </div>
-          </div>
-          <h3>Cut the Queue</h3>
-          <p>
-            A smart queuing system for businesses to manage customer flow
-            efficiently. Features real-time queue updates, SMS notifications,
-            and analytics dashboard for queue management.
-          </p>
-          <div class="project-tags">
-            <span>Websocket</span>
-            <span>Node.js</span>
-            <span>Express</span>
+            <div class="project-details">
+              <h3>Cut the Queue</h3>
+              <p>
+                A smart queuing system for businesses to manage customer flow
+                efficiently. Features real-time queue updates, SMS
+                notifications, and analytics dashboard for queue management.
+              </p>
+              <div class="project-tags">
+                <span>Websocket</span>
+                <span>Node.js</span>
+                <span>Express</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -151,12 +160,12 @@
     <section id="achievements" data-motion="fade-up">
       <h2>Achievements</h2>
       <div class="achievements-grid">
-        <div class="achievement-card">
+        <div class="achievement-card" data-motion-achievement>
           <i class="fas fa-trophy"></i>
           <h3>Coding Championship</h3>
           <p>First place in inter-collegiate coding competition</p>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card" data-motion-achievement>
           <i class="fas fa-medal"></i>
           <h3>Hackathon Winner</h3>
           <p>Won university hackathon for innovative solution</p>
