@@ -738,10 +738,11 @@ footer {
   }
 
   .hero-right {
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    margin: 0 2rem;
   }
 
   .hero-left h1 {
@@ -755,14 +756,14 @@ footer {
 
   .hero-right h2 {
     font-size: 2rem;
-    text-align: center;
+    text-align: left;
     margin-bottom: 1.5rem;
     margin-top: 0;
   }
 
   .hero-right p {
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
     margin-top: 0;
   }
 
@@ -828,6 +829,30 @@ footer {
     font-size: 0.95rem;
   }
 
+  .hero-right {
+    margin: 0 1.5rem;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .cta-container h2 {
+    font-size: 2rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+
+  .cta-features {
+    display: none;
+  }
+
+  .cta-button {
+    max-width: 260px;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
   .testimonial-card {
     padding: 1.5rem;
   }
@@ -861,18 +886,22 @@ footer {
   }
 
   .cta-features {
-    grid-template-columns: 1fr;
+    display: none;
   }
 
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
   }
 
   .cta-button {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     justify-content: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
