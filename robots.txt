@@ -1,0 +1,8 @@
+# robots.txt for Mohammed Madni Portfolio
+# Allows search engines to crawl and index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://madniverse.com/sitemap.xml
