@@ -98,92 +98,32 @@ document.querySelectorAll('section, .project-card, .education-card').forEach(el 
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  // Header animation
-  motion(
-    document.querySelector(".header-content"),
-    {
-      opacity: [0, 1],
-      y: [50, 0],
-    },
-    {
-      duration: 1,
-      easing: "ease-out",
-    }
-  );
+  // Hero/header fade-in (vanilla JS – no Motion library)
+  const hero = document.querySelector(".hero-container");
+  if (hero) {
+    hero.style.opacity = "0";
+    hero.style.transform = "translateY(30px)";
+    requestAnimationFrame(() => {
+      hero.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+      hero.style.opacity = "1";
+      hero.style.transform = "translateY(0)";
+    });
+  }
 
-  document.querySelectorAll("section").forEach((section) => {
-    scroll(
-      animate(section, {
-        opacity: [0, 1],
-        y: [100, 0],
-      }),
-      {
-        target: section,
-        offset: ["0 1", "1 1"],
-      }
-    );
-  });
+  // Section and card animations are handled by IntersectionObserver above (fade-up + visible)
 
+  // Project card hover scale via CSS class (no Motion library)
   document.querySelectorAll(".project-card").forEach((card) => {
     card.addEventListener("mouseenter", () => {
-      motion(
-        card,
-        {
-          scale: 1.05,
-        },
-        {
-          duration: 0.3,
-        }
-      );
+      card.style.transform = "scale(1.03)";
+      card.style.transition = "transform 0.3s ease";
     });
-
     card.addEventListener("mouseleave", () => {
-      motion(
-        card,
-        {
-          scale: 1,
-        },
-        {
-          duration: 0.3,
-        }
-      );
+      card.style.transform = "scale(1)";
     });
   });
 
-  document.querySelectorAll('[data-motion-card]').forEach((card, index) => {
-    motion(card, {
-      initial: { scale: 0.9, opacity: 0, y: 50 },
-      animate: { scale: 1, opacity: 1, y: 0 },
-      transition: {
-        delay: index * 0.2,
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      },
-      whileHover: { 
-        scale: 1.03, 
-        rotate: 1,
-        transition: { duration: 0.3 }
-      }
-    });
-  });
-
-  
-  document.querySelectorAll('[data-motion-achievement]').forEach((card, index) => {
-    motion(card, {
-      initial: { opacity: 0, x: -50 },
-      animate: { opacity: 1, x: 0 },
-      transition: {
-        delay: index * 0.3,
-        type: "spring",
-        stiffness: 100
-      },
-      whileHover: { 
-        scale: 1.1,
-        transition: { duration: 0.2 }
-      }
-    });
-  });
+  // data-motion-card / data-motion-achievement: already animated by IntersectionObserver + .fade-up
 
   document.querySelectorAll('.achievement-card i').forEach(icon => {
     setInterval(() => {
