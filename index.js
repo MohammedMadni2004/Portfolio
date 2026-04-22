@@ -137,4 +137,66 @@ window.addEventListener("DOMContentLoaded", () => {
     threshold: 0.2,
     rootMargin: "-50px"
   };
+
+  // ===== Hamburger toggle (tablet) =====
+  const navToggle = document.getElementById("nav-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      navToggle.classList.toggle("active");
+      navMenu.classList.toggle("open");
+    });
+
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navToggle.classList.remove("active");
+        navMenu.classList.remove("open");
+      });
+    });
+  }
+
+  // ===== Scroll-spy: highlight active nav link =====
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("nav ul a");
+
+  function updateActiveLink() {
+    const scrollY = window.scrollY + window.innerHeight / 3;
+    let currentSection = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + currentSection) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  // ===== Nav background on scroll =====
+  const nav = document.getElementById("main-nav");
+  function updateNavBackground() {
+    if (window.scrollY > 50) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    updateActiveLink();
+    updateNavBackground();
+  }, { passive: true });
+
+  // Initial calls
+  updateActiveLink();
+  updateNavBackground();
 });

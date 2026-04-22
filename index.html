@@ -62,14 +62,19 @@
   </head>
   <body>
     <div id="particles-js"></div>
-    <nav data-motion="fade">
+    <nav data-motion="fade" id="main-nav">
       <div class="nav-content">
-        <ul>
-          <li><a href="#projects">Work & Projects</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <ul id="nav-menu">
+          <li><a href="#projects"><i class="fas fa-briefcase"></i><span>Projects</span></a></li>
+          <li><a href="#services"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+          <li><a href="#testimonials"><i class="fas fa-star"></i><span>Reviews</span></a></li>
+          <li><a href="#skills"><i class="fas fa-code"></i><span>Skills</span></a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
         </ul>
       </div>
     </nav>
